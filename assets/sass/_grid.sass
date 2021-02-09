@@ -142,7 +142,25 @@ a
     flex-direction: row
     justify-content: space-between
     align-items: center
+    // position: fixed
+    // z-index: 55
+    // background: rgba(0, 0, 0, 0.6)
+    &__social
+        display: none
     &__logo
+        font-size: 20px
+        color: $text-light
+        text-decoration: none
+        flex: 0 0 260px
+        border-right: 50%
+        overflow: hidden
+        position: relative
+        z-index: 3
+        &:hover
+            color: $text-light
+    &__logo img
+        max-width: 100%
+        display: block
     &__burger
         display: none
     &__nav
@@ -155,10 +173,79 @@ a
                 padding-right: 0
 
 @media (max-width: 768px)
+    body.lock
+        overflow: hidden
     .menu
+        // top: 0
+        // left: 0
+        // padding: 0 20px
+        &__social
+            display: block
+            font-size: 24px
+            border-top: 1px solid #2b2a32
+            padding: 15px
+            color: #2b2a32
+            & a
+                color: #939598
+                &:hover
+                    color: #f0f0f0
+        &__logo
+            flex: 0 0 180px
         &__burger
             display: block
-            padding: 10px
-            background: #ffffff15
+            position: relative
+            width: 30px
+            height: 20px
+            position: relative
+            z-index: 3
+            & span
+                position: absolute
+                background-color: #fff
+                width: 100%
+                height: 2px
+                left: 0px
+                top: 9px
+                transition: all 0.3s ease 0s
+        &__burger:after, &__burger:before
+            content: ''
+            background-color: #fff
+            position: absolute
+            width: 100%
+            height: 2px
+            left: 0px
+            transition: all 0.3s ease 0s
+        &__burger:before
+            top: 0
+        &__burger:after
+            bottom: 0
+        &__burger.active span
+            transform: scale(0)
+        &__burger.active:before
+            transform: rotate(45deg)
+            top: 9px
+        &__burger.active:after
+            transform: rotate(-45deg)
+            bottom: 9px
         &__nav
-            display: none
+            position: fixed
+            top: -100%
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #000000
+            padding: 70px 20px 20px 20px
+            transition: all 0.3s ease 0s
+            overflow: auto
+            text-align: center
+            &.active
+                top: 0
+            & ul
+                display: flex
+                flex-direction: column
+                align-items: stretch
+                justify-content: space-evenly
+                height: 90%
+                margin: 10px
+                & li
+                    margin: 0px 0px 20px 0px
+                    font-size: 21px
