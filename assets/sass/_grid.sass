@@ -1,2 +1,164 @@
 body
-    background: #ffffff
+    background: #333333
+    color: white
+    font-size: 16px
+    +normal
+
+h1, .h1
+    font-size: 2.5rem
+    font-weight: bold
+
+h2, .h2
+    font-size: 2rem
+    font-weight: normal
+
+h3, .h3
+    font-size: 1.75rem
+    font-weight: normal
+
+h4, .h4
+    font-size: 1.5rem
+    font-weight: bold
+
+h5, .h5
+    font-size: 1.25rem
+    font-weight: bold
+
+h6, .h6
+    font-size: 1rem
+    font-weight: bold
+
+a
+    color: #ffffff
+    text-decoration: none
+    &:hover
+        color: #ffffff
+        text-decoration: underline red
+    &:active
+        color: red
+
+.container
+    margin: 0px auto
+    padding: 0px 10px
+    width: 100%
+    max-width: 1400px
+
+.row
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -10px
+
+.col
+    padding: 0 10px
+.col-one
+    width: 100%
+.col-two
+    width: 50%
+.col-three
+    width: 33%
+.col-four
+    width: 25%
+
+@media (max-width: 1299px)
+    .container
+        max-width: 960px
+    .col-four
+        width: 33.333%
+    .row .col-four
+        width: 33.333%
+@media (max-width: 991px)
+    .container
+        max-width: 750px
+    .col-two
+        width: 100%
+    .col-four
+        width: 50%
+    .row .col-four
+        width: 50%
+
+@media (max-width: 767px)
+    .container
+        max-width: 100%
+        padding: 0 20px
+    .main
+        padding: 50px 0px 0px 0px
+    .col-four
+        width: 100%
+    .row .col-four
+        width: 100%
+
+.wrapper
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+
+.fullscreen
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    padding: 20px 0
+    &__body
+        flex: 1 1 auto
+        width: 100%
+        max-width: 1000px
+        margin: 0px auto
+        text-align: center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 0px 20px
+    &__title
+        font-size: 50px
+        margin: 0px 0px 20px 0px
+    &__text
+        font-size: 25px
+        margin: 0px 0px 20px 0px
+    &__link
+        display: inline-block
+        line-height: 50px
+        text-transform: uppercase
+        color: #fff
+        text-decoration: none
+        letter-spacing: 2px
+        background-color: #77608d
+        align-self: center
+        padding: 0px 20px
+        &:hover
+            text-decoration: none
+            background-color: #735791
+
+.fullscreen__one
+    background-color: #794f45
+
+.fullscreen__two
+    background-color: #666666
+.fullscreen__bg1
+    background: url('../img/bg/hero4.jpg') center / cover no-repeat fixed
+.fullscreen__bg2
+    background: url('../img/bg/hero3.jpg') center / cover no-repeat fixed
+
+.menu
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    &__logo
+    &__burger
+        display: none
+    &__nav
+        & ul
+            display: flex
+            flex-direction: row
+        & li
+            padding-right: 20px
+            &:last-child
+                padding-right: 0
+
+@media (max-width: 768px)
+    .menu
+        &__burger
+            display: block
+            padding: 10px
+            background: #ffffff15
+        &__nav
+            display: none
